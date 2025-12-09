@@ -52,7 +52,7 @@ public class ListWahana {
             current.setNext(newNode);
         }
         size++;
-        System.out.println("✓ Wahana '" + namaWahana + "' berhasil ditambahkan dengan ID: " + idWahana);
+        System.out.println("  Wahana '" + namaWahana + "' berhasil ditambahkan dengan ID: " + idWahana);
     }
     
     // cari wahana berdasarkan id
@@ -103,17 +103,17 @@ public class ListWahana {
             if (kapasitasBaru != null) {
                 wahana.setKapasitas(kapasitasBaru);
             }
-            System.out.println("✓ Wahana berhasil diupdate!");
+            System.out.println("  Wahana berhasil diupdate!");
             return true;
         }
-        System.out.println("✗ Wahana tidak ditemukan!");
+        System.out.println("  Wahana tidak ditemukan!");
         return false;
     }
     
     // hapus wahana dari graph
     public boolean deleteWahana(String idWahana) {
         if (head == null) {
-            System.out.println("✗ Graph wahana kosong!");
+            System.out.println("  Graph wahana kosong!");
             return false;
         }
         
@@ -128,7 +128,7 @@ public class ListWahana {
         if (head.getIdWahana().equals(idWahana)) {
             head = head.getNext();
             size--;
-            System.out.println("✓ Wahana berhasil dihapus!");
+            System.out.println("  Wahana berhasil dihapus!");
             return true;
         }
         
@@ -137,13 +137,13 @@ public class ListWahana {
             if (current.getNext().getIdWahana().equals(idWahana)) {
                 current.setNext(current.getNext().getNext());
                 size--;
-                System.out.println("✓ Wahana berhasil dihapus!");
+                System.out.println("  Wahana berhasil dihapus!");
                 return true;
             }
             current = current.getNext();
         }
         
-        System.out.println("✗ Wahana tidak ditemukan!");
+        System.out.println("  Wahana tidak ditemukan!");
         return false;
     }
     
@@ -225,7 +225,7 @@ public class ListWahana {
         NodeWahana tujuan = searchWahana(idWahanaTujuan);
         
         if (asal == null || tujuan == null) {
-            System.out.println("✗ Wahana tidak ditemukan!");
+            System.out.println("  Wahana tidak ditemukan!");
             return;
         }
         
@@ -275,7 +275,7 @@ public class ListWahana {
         
         // tampilin hasil
         if (!prev.containsKey(idWahanaTujuan) && !idWahanaAsal.equals(idWahanaTujuan)) {
-            System.out.println("✗ Tidak ada jalur dari " + asal.getNamaWahana() + 
+            System.out.println("  Tidak ada jalur dari " + asal.getNamaWahana() + 
                              " ke " + tujuan.getNamaWahana());
             return;
         }

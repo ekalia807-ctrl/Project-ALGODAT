@@ -83,10 +83,10 @@ public class ListUser {
             if (passwordBaru != null && !passwordBaru.isEmpty()) {
                 user.setPassword(passwordBaru);
             }
-            System.out.println("✓ Data user berhasil diupdate!");
+            System.out.println("  Data user berhasil diupdate!");
             return true;
         }
-        System.out.println("✗ User tidak ditemukan!");
+        System.out.println("  User tidak ditemukan!");
         return false;
     }
     

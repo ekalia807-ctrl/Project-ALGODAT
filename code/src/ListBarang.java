@@ -27,7 +27,7 @@ public class ListBarang {
             rear = newNode;
         }
         size++;
-        System.out.println("✓ Barang berhasil dititipkan!");
+        System.out.println("  Barang berhasil dititipkan!");
         System.out.println("  Kode Barang Anda: " + kodeBarang);
         System.out.println("  Simpan kode ini untuk mengambil barang!");
     }
@@ -35,7 +35,7 @@ public class ListBarang {
     // dequeue/ambil barang (hapus dari depan)
     public NodeBarang dequeue() {
         if (front == null) {
-            System.out.println("✗ Tidak ada barang titipan!");
+            System.out.println("  Tidak ada barang titipan!");
             return null;
         }
         
@@ -65,18 +65,18 @@ public class ListBarang {
     // hapus/ambil barang berdasarkan kode (untuk user)
     public boolean ambilBarang(String kodeBarang, String userId) {
         if (front == null) {
-            System.out.println("✗ Tidak ada barang titipan!");
+            System.out.println("  Tidak ada barang titipan!");
             return false;
         }
         
         //cek apakah barang pertama
         if (front.getKodeBarang().equals(kodeBarang)) {
             if (!front.getUserId().equals(userId)) {
-                System.out.println("✗ Ini bukan barang Anda!");
+                System.out.println("  Ini bukan barang Anda!");
                 return false;
             }
             NodeBarang barang = dequeue();
-            System.out.println("✓ Barang berhasil diambil!");
+            System.out.println("  Barang berhasil diambil!");
             System.out.println("  " + barang.toString());
             return true;
         }
@@ -86,7 +86,7 @@ public class ListBarang {
         while (current.getNext() != null) {
             if (current.getNext().getKodeBarang().equals(kodeBarang)) {
                 if (!current.getNext().getUserId().equals(userId)) {
-                    System.out.println("✗ Ini bukan barang Anda!");
+                    System.out.println("  Ini bukan barang Anda!");
                     return false;
                 }
                 
@@ -98,27 +98,27 @@ public class ListBarang {
                 }
                 
                 size--;
-                System.out.println("✓ Barang berhasil diambil!");
+                System.out.println("  Barang berhasil diambil!");
                 System.out.println("  " + barang.toString());
                 return true;
             }
             current = current.getNext();
         }
         
-        System.out.println("✗ Barang dengan kode '" + kodeBarang + "' tidak ditemukan!");
+        System.out.println("  Barang dengan kode '" + kodeBarang + "' tidak ditemukan!");
         return false;
     }
     
     // hapus barang (buat admin) gapake validasi userId
     public boolean deleteBarang(String kodeBarang) {
         if (front == null) {
-            System.out.println("✗ Tidak ada barang titipan!");
+            System.out.println("  Tidak ada barang titipan!");
             return false;
         }
         
         if (front.getKodeBarang().equals(kodeBarang)) {
             NodeBarang barang = dequeue();
-            System.out.println("✓ Barang berhasil dihapus!");
+            System.out.println("  Barang berhasil dihapus!");
             System.out.println("  " + barang.toString());
             return true;
         }
@@ -134,14 +134,14 @@ public class ListBarang {
                 }
                 
                 size--;
-                System.out.println("✓ Barang berhasil dihapus!");
+                System.out.println("  Barang berhasil dihapus!");
                 System.out.println("  " + barang.toString());
                 return true;
             }
             current = current.getNext();
         }
         
-        System.out.println("✗ Barang dengan kode '" + kodeBarang + "' tidak ditemukan!");
+        System.out.println("  Barang dengan kode '" + kodeBarang + "' tidak ditemukan!");
         return false;
     }
     

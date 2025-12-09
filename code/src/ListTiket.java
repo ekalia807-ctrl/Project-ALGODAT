@@ -36,14 +36,14 @@ public class ListTiket {
     // hapus tiket berdasarkan ID tiket
     public boolean dequeue(String idTiket) {
         if (front == null) {
-            System.out.println("✗ Queue tiket kosong!");
+            System.out.println("  Queue tiket kosong!");
             return false;
         }
 
         if (front.getIdTiket().equals(idTiket)) {
             front = front.getNext();
             queueSize--;
-            System.out.println("✓ Tiket dengan ID " + idTiket + " berhasil dihapus dari riwayat!");
+            System.out.println("  Tiket dengan ID " + idTiket + " berhasil dihapus dari riwayat!");
             return true;
         }
         NodeTiket current = front;
@@ -51,12 +51,12 @@ public class ListTiket {
             if (current.getNext().getIdTiket().equals(idTiket)) {
                 current.setNext(current.getNext().getNext());
                 queueSize--;
-                System.out.println("✓ Tiket dengan ID " + idTiket + " berhasil dihapus dari riwayat!");
+                System.out.println("  Tiket dengan ID " + idTiket + " berhasil dihapus dari riwayat!");
                 return true;
             }
             current = current.getNext();
         }
-        System.out.println("✗ Tiket dengan ID " + idTiket + " tidak ditemukan!");
+        System.out.println("  Tiket dengan ID " + idTiket + " tidak ditemukan!");
         return false;
     }
     
@@ -105,10 +105,10 @@ public class ListTiket {
         }
         
         if (found) {
-            System.out.println("✓ Harga tiket " + jenisTiket + " berhasil diupdate!");
+            System.out.println("  Harga tiket " + jenisTiket + " berhasil diupdate!");
             return true;
         } else {
-            System.out.println("✗ Tiket dengan jenis '" + jenisTiket + "' tidak ditemukan!");
+            System.out.println("  Tiket dengan jenis '" + jenisTiket + "' tidak ditemukan!");
             return false;
         }
     }
@@ -129,7 +129,7 @@ public class ListTiket {
     // hapus tiket paling atas dari stack
     public NodeTiket pop() {
         if (top == null) {
-            System.out.println("✗ Stack tiket kosong!");
+            System.out.println("  Stack tiket kosong!");
             return null;
         }
         

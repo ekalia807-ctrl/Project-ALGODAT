@@ -77,7 +77,7 @@ public class Main {
                     running = false;
                     break;
                 default:
-                    System.out.println("✗ Pilihan tidak valid!");
+                    System.out.println("  Pilihan tidak valid!");
                     tekanEnter();
             }
         }
@@ -113,11 +113,11 @@ public class Main {
         NodeAdmin admin = listAdmin.login(adminId, password);
         
         if (admin != null) {
-            System.out.println("✓ Login berhasil! Selamat datang, " + admin.getNama());
+            System.out.println("  Login berhasil! Selamat datang, " + admin.getNama());
             tekanEnter();
             menuAdmin(admin);
         } else {
-            System.out.println("✗ Login gagal! Admin ID atau password salah.");
+            System.out.println("  Login gagal! Admin ID atau password salah.");
             System.out.println("  (Default: admin / admin123)");
             tekanEnter();
         }
@@ -137,11 +137,11 @@ public class Main {
         NodeUser user = listUser.login(userId, password);
         
         if (user != null) {
-            System.out.println("✓ Login berhasil! Selamat datang, " + user.getNama());
+            System.out.println("  Login berhasil! Selamat datang, " + user.getNama());
             tekanEnter();
             menuUser(user);
         } else {
-            System.out.println("✗ Login gagal! User ID atau password salah.");
+            System.out.println("  Login gagal! User ID atau password salah.");
             System.out.println("  (Coba: user1 / pass123)");
             tekanEnter();
         }
@@ -158,7 +158,7 @@ public class Main {
         
         // cek apakah userId sudah ada
         if (listUser.searchUser(userId) != null) {
-            System.out.println("✗ User ID sudah digunakan! Pilih yang lain.");
+            System.out.println("  User ID sudah digunakan! Pilih yang lain.");
             tekanEnter();
             return;
         }
@@ -169,7 +169,7 @@ public class Main {
         String password = scanner.nextLine();
         
         listUser.addUser(userId, nama, password);
-        System.out.println("✓ Registrasi berhasil! Silakan login.");
+        System.out.println("  Registrasi berhasil! Silakan login.");
         tekanEnter();
     }
     
@@ -208,12 +208,12 @@ public class Main {
                     menuKelolaBarang();
                     break;
                 case 5:
-                    System.out.println("✓ Logout berhasil!");
+                    System.out.println("  Logout berhasil!");
                     tekanEnter();
                     running = false;
                     break;
                 default:
-                    System.out.println("✗ Pilihan tidak valid!");
+                    System.out.println("  Pilihan tidak valid!");
                     tekanEnter();
             }
         }
@@ -259,7 +259,7 @@ public class Main {
                     running = false;
                     break;
                 default:
-                    System.out.println("✗ Pilihan tidak valid!");
+                    System.out.println("  Pilihan tidak valid!");
                     tekanEnter();
             }
         }
@@ -272,7 +272,7 @@ public class Main {
         double harga = inputDouble();
         
         listTiket.enqueue(jenis, harga, "SYSTEM");
-        System.out.println("✓ Tiket baru berhasil ditambahkan!");
+        System.out.println("  Tiket baru berhasil ditambahkan!");
         tekanEnter();
     }
     
@@ -326,7 +326,7 @@ public class Main {
                     running = false;
                     break;
                 default:
-                    System.out.println("✗ Pilihan tidak valid!");
+                    System.out.println("  Pilihan tidak valid!");
                     tekanEnter();
             }
         }
@@ -346,7 +346,7 @@ public class Main {
         
         NodeUser user = listUser.searchUser(userId);
         if (user == null) {
-            System.out.println("✗ User tidak ditemukan!");
+            System.out.println("  User tidak ditemukan!");
             tekanEnter();
             return;
         }
@@ -401,7 +401,7 @@ public class Main {
                     running = false;
                     break;
                 default:
-                    System.out.println("✗ Pilihan tidak valid!");
+                    System.out.println("  Pilihan tidak valid!");
                     tekanEnter();
             }
         }
@@ -426,7 +426,7 @@ public class Main {
         
         NodeWahana wahana = listWahana.searchWahana(id);
         if (wahana == null) {
-            System.out.println("✗ Wahana tidak ditemukan!");
+            System.out.println("  Wahana tidak ditemukan!");
             tekanEnter();
             return;
         }
@@ -461,9 +461,9 @@ public class Main {
         int jarak = inputInt();
         
         if (listWahana.addEdge(idAsal, idTujuan, jarak)) {
-            System.out.println("✓ Rute berhasil ditambahkan!");
+            System.out.println("  Rute berhasil ditambahkan!");
         } else {
-            System.out.println("✗ Gagal menambahkan rute! Periksa ID wahana.");
+            System.out.println("  Gagal menambahkan rute! Periksa ID wahana.");
         }
         tekanEnter();
     }
@@ -497,7 +497,7 @@ public class Main {
                     running = false;
                     break;
                 default:
-                    System.out.println("✗ Pilihan tidak valid!");
+                    System.out.println("  Pilihan tidak valid!");
                     tekanEnter();
             }
         }
@@ -560,12 +560,12 @@ public class Main {
                     tekanEnter();
                     break;
                 case 8:
-                    System.out.println("✓ Logout berhasil!");
+                    System.out.println("  Logout berhasil!");
                     tekanEnter();
                     running = false;
                     break;
                 default:
-                    System.out.println("✗ Pilihan tidak valid!");
+                    System.out.println("  Pilihan tidak valid!");
                     tekanEnter();
             }
         }
@@ -589,7 +589,7 @@ public class Main {
         
         NodeTiket tiket = listTiket.searchTiketByJenis(jenis);
         if (tiket == null) {
-            System.out.println("✗ Jenis tiket tidak ditemukan!");
+            System.out.println("  Jenis tiket tidak ditemukan!");
             tekanEnter();
             return;
         }
@@ -603,7 +603,7 @@ public class Main {
         // update jumlah tiket user
         user.setNoTiket(user.getNoTiket() + 1);
         
-        System.out.println("✓ Tiket berhasil dibeli!");
+        System.out.println("  Tiket berhasil dibeli!");
         System.out.println("  Total: Rp" + tiket.getHarga());
         tekanEnter();
     }
@@ -654,7 +654,7 @@ public class Main {
                 int value = Integer.parseInt(scanner.nextLine());
                 return value;
             } catch (NumberFormatException e) {
-                System.out.print("✗ Input harus berupa angka! Coba lagi: ");
+                System.out.print("  Input harus berupa angka! Coba lagi: ");
             }
         }
     }
@@ -665,7 +665,7 @@ public class Main {
                 double value = Double.parseDouble(scanner.nextLine());
                 return value;
             } catch (NumberFormatException e) {
-                System.out.print("✗ Input harus berupa angka! Coba lagi: ");
+                System.out.print("  Input harus berupa angka! Coba lagi: ");
             }
         }
     }
