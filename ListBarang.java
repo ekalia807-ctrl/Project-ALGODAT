@@ -97,6 +97,7 @@ public class ListBarang {
         System.out.println("║                         DAFTAR BARANG TITIPAN                             ║");
         System.out.println("╠═══════════════════════════════════════════════════════════════════════════╣");
         
+        
         NodeBarang current = front;
         while (current != null) {
             System.out.println("║ " + current.toString());

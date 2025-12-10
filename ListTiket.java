@@ -119,6 +119,7 @@ public class ListTiket {
         System.out.println("╚═══════════════════════════════════════════════════════╝");
     }
     
+    
     public boolean isQueueEmpty() {
         return front == null;
     }
